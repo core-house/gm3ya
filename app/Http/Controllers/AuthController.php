@@ -73,9 +73,7 @@ class AuthController extends Controller
             'name' => 'required|string|max:255',
             'phone' => 'required|string|unique:users,phone',
             'password' => 'required|string|min:8|confirmed',
-            'tenant_id' => 'required|exists:tenants,id',
-            'tenant_id' => 'string',
-        ]);
+                ]);
 
         // إنشاء email فريد من رقم الهاتف والـ tenant_id
         // تنظيف رقم الهاتف من الأحرف الخاصة
