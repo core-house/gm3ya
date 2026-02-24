@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>نظام إدارة دفع الأقساط</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1e40af", // Professional blue
+              "background-light": "#f8fafc",
+              "background-dark": "#0f172a",
+            },
+            fontFamily: {
+              display: ["Tajawal", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+            },
+          },
+        },
+      };
+    </script>
+<style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+        }::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .dark ::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #475569;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200 transition-colors duration-200">
+<header class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 sticky top-0 z-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-16">
+<div class="flex items-center gap-8">
+<div class="flex-shrink-0 flex items-center gap-2">
+<div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-icons">account_balance</span>
+</div>
+<span class="font-bold text-xl text-primary dark:text-blue-400">نظام الجمعية</span>
+</div>
+<nav class="hidden md:flex space-x-1 space-x-reverse">
+<a class="px-3 py-2 text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-primary" href="#">لوحة التحكم</a>
+<a class="px-3 py-2 text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-primary" href="#">العملاء</a>
+<a class="px-3 py-2 text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-primary" href="#">الجمعيات</a>
+<a class="px-3 py-2 text-sm font-medium text-primary border-b-2 border-primary" href="#">دفع الأقساط</a>
+<a class="px-3 py-2 text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-primary" href="#">تقفيل الشهر</a>
+<a class="px-3 py-2 text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-primary" href="#">التقارير</a>
+<a class="px-3 py-2 text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-primary" href="#">الإعدادات</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-icons">dark_mode</span>
+</button>
+<div class="flex items-center gap-2 cursor-pointer">
+<div class="text-right hidden sm:block">
+<p class="text-xs font-bold">أحمد علي</p>
+<p class="text-[10px] text-slate-500">مدير النظام</p>
+</div>
+<div class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center">
+<span class="material-icons text-slate-500">person</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<div class="mb-8">
+<h1 class="text-2xl font-bold text-slate-900 dark:text-white">دفع الأقساط</h1>
+<p class="text-slate-500 dark:text-slate-400 mt-1">إدارة وتحصيل الأقساط الشهرية للعملاء</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-blue-50 dark:bg-blue-900/30 rounded-lg text-blue-600 dark:text-blue-400">
+<span class="material-icons">payments</span>
+</div>
+<span class="text-sm font-medium text-green-600 bg-green-50 dark:bg-green-900/30 px-2 py-1 rounded">30 عميل</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm">أقساط الشهر الحالي</p>
+<div class="flex items-baseline gap-1 mt-1">
+<h3 class="text-2xl font-bold">50,000</h3>
+<span class="text-sm text-slate-500">ج.م</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-red-50 dark:bg-red-900/30 rounded-lg text-red-600 dark:text-red-400">
+<span class="material-icons">priority_high</span>
+</div>
+<span class="text-sm font-medium text-red-600 bg-red-50 dark:bg-red-900/30 px-2 py-1 rounded">15 عميل</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm">أقساط متأخرة</p>
+<div class="flex items-baseline gap-1 mt-1">
+<h3 class="text-2xl font-bold">25,000</h3>
+<span class="text-sm text-slate-500">ج.م</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-indigo-50 dark:bg-indigo-900/30 rounded-lg text-indigo-600 dark:text-indigo-400">
+<span class="material-icons">history_toggle_off</span>
+</div>
+<span class="text-sm font-medium text-indigo-600 bg-indigo-50 dark:bg-indigo-900/30 px-2 py-1 rounded">5 عملاء</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm">أقساط مسددة مقدماً</p>
+<div class="flex items-baseline gap-1 mt-1">
+<h3 class="text-2xl font-bold">1,000</h3>
+<span class="text-sm text-slate-500">ج.م</span>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm mb-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
+<div>
+<label class="block text-xs font-semibold mb-2 text-slate-500">فلترة بالتاريخ</label>
+<div class="relative">
+<span class="material-icons absolute right-3 top-2.5 text-slate-400 text-sm">calendar_today</span>
+<input class="w-full pr-10 pl-3 py-2 bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg focus:ring-primary focus:border-primary text-sm" type="date"/>
+</div>
+</div>
+<div>
+<label class="block text-xs font-semibold mb-2 text-slate-500">البحث باسم العميل</label>
+<div class="relative">
+<span class="material-icons absolute right-3 top-2.5 text-slate-400 text-sm">person_search</span>
+<input class="w-full pr-10 pl-3 py-2 bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg focus:ring-primary focus:border-primary text-sm" placeholder="ادخل اسم العميل..." type="text"/>
+</div>
+</div>
+<div>
+<label class="block text-xs font-semibold mb-2 text-slate-500">البحث باسم الجمعية</label>
+<div class="relative">
+<span class="material-icons absolute right-3 top-2.5 text-slate-400 text-sm">groups</span>
+<input class="w-full pr-10 pl-3 py-2 bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg focus:ring-primary focus:border-primary text-sm" placeholder="ادخل اسم الجمعية..." type="text"/>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 bg-primary text-white py-2 rounded-lg font-medium text-sm hover:bg-blue-700 transition-colors">عملاء لم يدفعوا</button>
+<button class="flex-1 border border-slate-200 dark:border-slate-700 py-2 rounded-lg font-medium text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">عملاء دفعوا</button>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-right border-collapse">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-800/50 text-slate-500 dark:text-slate-400 text-xs uppercase font-bold border-b border-slate-200 dark:border-slate-800">
+<th class="px-6 py-4">م</th>
+<th class="px-6 py-4">اسم العميل</th>
+<th class="px-6 py-4">اسم الجمعية</th>
+<th class="px-6 py-4 text-center">شهر القسط</th>
+<th class="px-6 py-4 text-center">قيمة القسط</th>
+<th class="px-6 py-4 text-center">الإجراءات</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/40 transition-colors">
+<td class="px-6 py-4 text-sm font-medium">1</td>
+<td class="px-6 py-4">
+<div class="font-medium text-slate-900 dark:text-white">محمد أحمد محمود</div>
+<div class="text-[10px] text-slate-500">ID: #4582</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-300">جمعية الرحمة - مجموعة أ</td>
+<td class="px-6 py-4 text-center">
+<span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-xs">أكتوبر 2023</span>
+</td>
+<td class="px-6 py-4 text-center font-bold text-primary dark:text-blue-400">1,500 ج.م</td>
+<td class="px-6 py-4">
+<div class="flex justify-center gap-2">
+<button class="p-2 bg-green-500 text-white rounded hover:bg-green-600 transition-colors" title="دفع">
+<span class="material-icons text-sm">check_circle</span>
+</button>
+<button class="p-2 bg-emerald-600 text-white rounded hover:bg-emerald-700 transition-colors" title="واتساب">
+<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.539 2.016 2.126-.54c1.029.563 2.025.921 3.162.921 3.182 0 5.768-2.586 5.768-5.766 0-3.18-2.586-5.784-5.768-5.784zm3.336 8.086c-.143.402-.835.747-1.159.791-.324.045-.747.089-1.384-.134-1.138-.402-2.301-1.384-3.104-2.187-.804-.803-1.785-1.967-2.187-3.105-.223-.637-.179-1.06-.134-1.384.045-.324.39-.993.791-1.137.134-.044.29-.089.424-.089.134 0 .268.044.38.134.134.134.424.894.469 1.018.045.134.089.268.022.402-.067.134-.134.223-.223.335-.089.089-.201.201-.29.313-.112.112-.223.223-.089.447.134.223.581.938 1.25 1.541.871.782 1.607 1.027 1.831 1.138.223.112.357.089.491-.044.134-.134.58-.67.737-.894.156-.223.312-.179.513-.112.223.067 1.407.67 1.652.782.246.112.402.179.469.29.067.112.067.581-.089.983z"></path></svg>
+</button>
+<button class="p-2 border border-slate-200 dark:border-slate-700 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded transition-colors" title="تفاصيل">
+<span class="material-icons text-sm">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/40 transition-colors">
+<td class="px-6 py-4 text-sm font-medium">2</td>
+<td class="px-6 py-4">
+<div class="font-medium text-slate-900 dark:text-white">خالد عبد الله</div>
+<div class="text-[10px] text-slate-500">ID: #4590</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-300">جمعية الصفا - المرحلة الثانية</td>
+<td class="px-6 py-4 text-center">
+<span class="px-3 py-1 bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 rounded-full text-xs font-medium">سبتمبر 2023 (متأخر)</span>
+</td>
+<td class="px-6 py-4 text-center font-bold text-red-600">2,000 ج.م</td>
+<td class="px-6 py-4">
+<div class="flex justify-center gap-2">
+<button class="p-2 bg-green-500 text-white rounded hover:bg-green-600 transition-colors">
+<span class="material-icons text-sm">check_circle</span>
+</button>
+<button class="p-2 bg-emerald-600 text-white rounded hover:bg-emerald-700 transition-colors">
+<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.539 2.016 2.126-.54c1.029.563 2.025.921 3.162.921 3.182 0 5.768-2.586 5.768-5.766 0-3.18-2.586-5.784-5.768-5.784zm3.336 8.086c-.143.402-.835.747-1.159.791-.324.045-.747.089-1.384-.134-1.138-.402-2.301-1.384-3.104-2.187-.804-.803-1.785-1.967-2.187-3.105-.223-.637-.179-1.06-.134-1.384.045-.324.39-.993.791-1.137.134-.044.29-.089.424-.089.134 0 .268.044.38.134.134.134.424.894.469 1.018.045.134.089.268.022.402-.067.134-.134.223-.223.335-.089.089-.201.201-.29.313-.112.112-.223.223-.089.447.134.223.581.938 1.25 1.541.871.782 1.607 1.027 1.831 1.138.223.112.357.089.491-.044.134-.134.58-.67.737-.894.156-.223.312-.179.513-.112.223.067 1.407.67 1.652.782.246.112.402.179.469.29.067.112.067.581-.089.983z"></path></svg>
+</button>
+<button class="p-2 border border-slate-200 dark:border-slate-700 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded transition-colors">
+<span class="material-icons text-sm">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/40 transition-colors">
+<td class="px-6 py-4 text-sm font-medium">3</td>
+<td class="px-6 py-4">
+<div class="font-medium text-slate-900 dark:text-white">سارة يوسف</div>
+<div class="text-[10px] text-slate-500">ID: #4601</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-300">جمعية النور - فئة الموظفين</td>
+<td class="px-6 py-4 text-center">
+<span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-xs">أكتوبر 2023</span>
+</td>
+<td class="px-6 py-4 text-center font-bold text-primary dark:text-blue-400">1,200 ج.م</td>
+<td class="px-6 py-4">
+<div class="flex justify-center gap-2">
+<button class="p-2 bg-green-500 text-white rounded hover:bg-green-600 transition-colors">
+<span class="material-icons text-sm">check_circle</span>
+</button>
+<button class="p-2 bg-emerald-600 text-white rounded hover:bg-emerald-700 transition-colors">
+<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.539 2.016 2.126-.54c1.029.563 2.025.921 3.162.921 3.182 0 5.768-2.586 5.768-5.766 0-3.18-2.586-5.784-5.768-5.784zm3.336 8.086c-.143.402-.835.747-1.159.791-.324.045-.747.089-1.384-.134-1.138-.402-2.301-1.384-3.104-2.187-.804-.803-1.785-1.967-2.187-3.105-.223-.637-.179-1.06-.134-1.384.045-.324.39-.993.791-1.137.134-.044.29-.089.424-.089.134 0 .268.044.38.134.134.134.424.894.469 1.018.045.134.089.268.022.402-.067.134-.134.223-.223.335-.089.089-.201.201-.29.313-.112.112-.223.223-.089.447.134.223.581.938 1.25 1.541.871.782 1.607 1.027 1.831 1.138.223.112.357.089.491-.044.134-.134.58-.67.737-.894.156-.223.312-.179.513-.112.223.067 1.407.67 1.652.782.246.112.402.179.469.29.067.112.067.581-.089.983z"></path></svg>
+</button>
+<button class="p-2 border border-slate-200 dark:border-slate-700 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded transition-colors">
+<span class="material-icons text-sm">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/40 transition-colors">
+<td class="px-6 py-4 text-sm font-medium">4</td>
+<td class="px-6 py-4">
+<div class="font-medium text-slate-900 dark:text-white">إبراهيم سعيد</div>
+<div class="text-[10px] text-slate-500">ID: #4612</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-300">جمعية الرحمة - مجموعة ب</td>
+<td class="px-6 py-4 text-center">
+<span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-xs">أكتوبر 2023</span>
+</td>
+<td class="px-6 py-4 text-center font-bold text-primary dark:text-blue-400">800 ج.م</td>
+<td class="px-6 py-4">
+<div class="flex justify-center gap-2">
+<button class="p-2 bg-green-500 text-white rounded hover:bg-green-600 transition-colors">
+<span class="material-icons text-sm">check_circle</span>
+</button>
+<button class="p-2 bg-emerald-600 text-white rounded hover:bg-emerald-700 transition-colors">
+<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.539 2.016 2.126-.54c1.029.563 2.025.921 3.162.921 3.182 0 5.768-2.586 5.768-5.766 0-3.18-2.586-5.784-5.768-5.784zm3.336 8.086c-.143.402-.835.747-1.159.791-.324.045-.747.089-1.384-.134-1.138-.402-2.301-1.384-3.104-2.187-.804-.803-1.785-1.967-2.187-3.105-.223-.637-.179-1.06-.134-1.384.045-.324.39-.993.791-1.137.134-.044.29-.089.424-.089.134 0 .268.044.38.134.134.134.424.894.469 1.018.045.134.089.268.022.402-.067.134-.134.223-.223.335-.089.089-.201.201-.29.313-.112.112-.223.223-.089.447.134.223.581.938 1.25 1.541.871.782 1.607 1.027 1.831 1.138.223.112.357.089.491-.044.134-.134.58-.67.737-.894.156-.223.312-.179.513-.112.223.067 1.407.67 1.652.782.246.112.402.179.469.29.067.112.067.581-.089.983z"></path></svg>
+</button>
+<button class="p-2 border border-slate-200 dark:border-slate-700 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded transition-colors">
+<span class="material-icons text-sm">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-6 py-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+<span class="text-xs text-slate-500">عرض 1 إلى 4 من 50 سجل</span>
+<div class="flex gap-1">
+<button class="w-8 h-8 flex items-center justify-center rounded border border-slate-200 dark:border-slate-700 text-slate-400 disabled:opacity-50">
+<span class="material-icons text-sm">chevron_right</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-primary text-white text-xs">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 text-xs hover:bg-slate-50 dark:hover:bg-slate-800">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 text-xs hover:bg-slate-50 dark:hover:bg-slate-800">3</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 text-xs hover:bg-slate-50 dark:hover:bg-slate-800">
+<span class="material-icons text-sm">chevron_left</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<button class="fixed bottom-8 left-8 w-14 h-14 bg-primary text-white rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all flex items-center justify-center">
+<span class="material-icons">add</span>
+</button>
+
+</body></html>

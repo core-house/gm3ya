@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>تفاصيل الجمعية - رمضان</title>
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1e40af",
+              "background-light": "#f8fafc",
+              "background-dark": "#0f172a",
+            },
+            fontFamily: {
+              display: ["Almarai", "sans-serif"],
+              sans: ["Almarai", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.75rem",
+            },
+          },
+        },
+      };
+    </script>
+<style>
+        body {
+            font-family: 'Almarai', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200 min-h-screen transition-colors duration-300">
+<div class="fixed bottom-6 left-6 z-50">
+<button class="p-3 rounded-full bg-white dark:bg-slate-800 shadow-lg border border-slate-200 dark:border-slate-700 hover:scale-110 transition-transform" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-symbols-outlined block dark:hidden">dark_mode</span>
+<span class="material-symbols-outlined hidden dark:block text-yellow-400">light_mode</span>
+</button>
+</div>
+<div class="max-w-7xl mx-auto px-4 py-8">
+<header class="text-center mb-10">
+<div class="inline-flex items-center justify-center p-3 bg-primary/10 rounded-2xl mb-4">
+<span class="material-symbols-outlined text-primary text-4xl">account_balance_wallet</span>
+</div>
+<h1 class="text-3xl font-extrabold text-slate-900 dark:text-white mb-2">عرض تفاصيل جمعية رمضان</h1>
+<p class="text-slate-500 dark:text-slate-400">إدارة ومتابعة دفعات أعضاء الجمعية</p>
+</header>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-1">اسم المجموعة</p>
+<h3 class="text-xl font-bold text-primary">رمضان الخير</h3>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-1">مدة الجمعية</p>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white">12 شهر</h3>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-1">تاريخ البداية</p>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white">2023/03/01</h3>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-1">تاريخ النهاية</p>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white">2024/02/28</h3>
+</div>
+</div>
+<div class="mb-8 max-w-2xl mx-auto">
+<div class="relative">
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full pr-12 pl-4 py-4 rounded-2xl bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 focus:ring-2 focus:ring-primary focus:border-transparent dark:text-white transition-all shadow-sm" placeholder="البحث باسم العميل..." type="text"/>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-xl overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-right border-collapse">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-700">
+<th class="px-4 py-4 font-bold text-slate-700 dark:text-slate-300">م</th>
+<th class="px-4 py-4 font-bold text-slate-700 dark:text-slate-300">اسم العميل</th>
+<th class="px-4 py-4 font-bold text-slate-700 dark:text-slate-300">اسم الضمين</th>
+<th class="px-4 py-4 font-bold text-slate-700 dark:text-slate-300 text-center">قيمة القسط</th>
+<th class="px-4 py-4 font-bold text-slate-700 dark:text-slate-300 text-center">تاريخ القسط</th>
+<th class="px-4 py-4 font-bold text-slate-700 dark:text-slate-300 text-center">قيمة القبض</th>
+<th class="px-4 py-4 font-bold text-slate-700 dark:text-slate-300 text-center">دور القبض</th>
+<th class="px-4 py-4 font-bold text-slate-700 dark:text-slate-300 text-center">حالة العميل</th>
+<th class="px-4 py-4 font-bold text-slate-700 dark:text-slate-300 text-center">الإجراءات</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-700">
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+<td class="px-4 py-5 text-slate-500">1</td>
+<td class="px-4 py-5 font-semibold">محمد أحمد علي</td>
+<td class="px-4 py-5 text-slate-600 dark:text-slate-400">أحمد البنا</td>
+<td class="px-4 py-5 text-center text-primary font-bold">5000</td>
+<td class="px-4 py-5 text-center text-slate-500">2023/10/15</td>
+<td class="px-4 py-5 text-center font-bold text-emerald-600">50,000</td>
+<td class="px-4 py-5 text-center">
+<span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 rounded-full text-xs">العاشر</span>
+</td>
+<td class="px-4 py-5 text-center">
+<span class="flex items-center justify-center gap-1 text-emerald-500 font-medium">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span> نشط
+                                </span>
+</td>
+<td class="px-4 py-5 text-center">
+<div class="flex items-center justify-center gap-2">
+<button class="p-2 text-emerald-500 hover:bg-emerald-50 dark:hover:bg-emerald-500/10 rounded-lg transition-colors" title="واتساب">
+<span class="material-symbols-outlined">chat</span>
+</button>
+<button class="p-2 text-primary hover:bg-primary/10 rounded-lg transition-colors" title="عرض التفاصيل">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors bg-red-50/30 dark:bg-red-900/10">
+<td class="px-4 py-5 text-slate-500">2</td>
+<td class="px-4 py-5 font-semibold">أحمد السيد محمود</td>
+<td class="px-4 py-5 text-slate-600 dark:text-slate-400">محمود علي</td>
+<td class="px-4 py-5 text-center text-primary font-bold">10,000</td>
+<td class="px-4 py-5 text-center text-slate-500">2023/11/15</td>
+<td class="px-4 py-5 text-center font-bold text-slate-400">-</td>
+<td class="px-4 py-5 text-center">
+<span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-500 rounded-full text-xs">الحادي عشر</span>
+</td>
+<td class="px-4 py-5 text-center">
+<span class="flex items-center justify-center gap-1 text-red-500 font-medium">
+<span class="w-2 h-2 rounded-full bg-red-500"></span> معطل
+                                </span>
+</td>
+<td class="px-4 py-5 text-center">
+<div class="flex items-center justify-center gap-2">
+<button class="p-2 text-slate-400 cursor-not-allowed">
+<span class="material-symbols-outlined">chat</span>
+</button>
+<button class="p-2 text-primary hover:bg-primary/10 rounded-lg transition-colors">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+<td class="px-4 py-5 text-slate-500">3</td>
+<td class="px-4 py-5 font-semibold">إبراهيم خليل</td>
+<td class="px-4 py-5 text-slate-600 dark:text-slate-400">علي خليل</td>
+<td class="px-4 py-5 text-center text-primary font-bold">2,500</td>
+<td class="px-4 py-5 text-center text-slate-500">2023/12/15</td>
+<td class="px-4 py-5 text-center font-bold text-emerald-600">25,000</td>
+<td class="px-4 py-5 text-center">
+<span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 rounded-full text-xs">الأول</span>
+</td>
+<td class="px-4 py-5 text-center">
+<span class="flex items-center justify-center gap-1 text-emerald-500 font-medium">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span> نشط
+                                </span>
+</td>
+<td class="px-4 py-5 text-center">
+<div class="flex items-center justify-center gap-2">
+<button class="p-2 text-emerald-500 hover:bg-emerald-50 dark:hover:bg-emerald-500/10 rounded-lg transition-colors">
+<span class="material-symbols-outlined">chat</span>
+</button>
+<button class="p-2 text-primary hover:bg-primary/10 rounded-lg transition-colors">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr class="bg-slate-50 dark:bg-slate-900 border-t-2 border-slate-200 dark:border-slate-700 font-bold">
+<td class="px-4 py-5 text-primary text-lg" colspan="3">الاجمالي</td>
+<td class="px-4 py-5 text-center text-lg text-primary">25,000</td>
+<td class="px-4 py-5"></td>
+<td class="px-4 py-5 text-center text-lg text-emerald-600">120,000</td>
+<td colspan="3"></td>
+</tr>
+</tfoot>
+</table>
+</div>
+</div>
+<footer class="mt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-slate-500 dark:text-slate-400 text-sm italic">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-amber-500">info</span>
+<span>تنبيه: العميل المعطل لا يضاف إلى إجمالي الحسابات.</span>
+</div>
+<div>
+<span>تم التوليد بواسطة نظام إدارة الجمعيات</span>
+</div>
+</footer>
+</div>
+
+</body></html>

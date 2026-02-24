@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Active Jam'iyas Management List</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1e40af", // Professional Navy Blue
+              "background-light": "#f8fafc",
+              "background-dark": "#0f172a",
+            },
+            fontFamily: {
+              display: ["Cairo", "sans-serif"],
+              sans: ["Cairo", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+            },
+          },
+        },
+      };
+    </script>
+<style>
+        body {
+            font-family: 'Cairo', sans-serif;
+        }::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #334155;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen transition-colors duration-300">
+<header class="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 sticky top-0 z-30">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-16">
+<div class="flex items-center gap-3">
+<div class="bg-primary p-2 rounded-lg">
+<span class="material-icons-outlined text-white">account_balance_wallet</span>
+</div>
+<h1 class="text-xl font-bold text-primary dark:text-blue-400">نظام إدارة الجمعيات</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-icons-outlined text-slate-600 dark:text-slate-300">dark_mode</span>
+</button>
+<div class="flex items-center gap-2 border-r pr-4 border-slate-200 dark:border-slate-700">
+<span class="text-sm font-medium hidden sm:block">أحمد المدير</span>
+<div class="w-8 h-8 rounded-full bg-slate-300 dark:bg-slate-600 flex items-center justify-center">
+<span class="material-icons-outlined text-sm">person</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
+<div>
+<h2 class="text-2xl font-bold text-slate-800 dark:text-white">قائمة الجمعيات النشطة</h2>
+<p class="text-slate-500 dark:text-slate-400 mt-1">إدارة ومتابعة جميع الجمعيات القائمة حالياً في النظام</p>
+</div>
+<div class="bg-white dark:bg-slate-800 p-5 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 flex items-center gap-4 min-w-[240px]">
+<div class="p-3 bg-blue-50 dark:bg-blue-900/30 rounded-xl">
+<span class="material-icons-outlined text-primary dark:text-blue-400 text-3xl">groups</span>
+</div>
+<div>
+<p class="text-sm text-slate-500 dark:text-slate-400">عدد الجمعيات</p>
+<p class="text-3xl font-bold text-primary dark:text-blue-400">20</p>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 p-6 mb-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 items-end">
+<div class="space-y-2">
+<label class="text-xs font-semibold text-slate-500 dark:text-slate-400 block px-1">اسم الجمعية</label>
+<select class="w-full bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 rounded-lg focus:ring-primary focus:border-primary">
+<option>الكل</option>
+<option>جمعية أصدقاء</option>
+<option>جمعية العائلة</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-semibold text-slate-500 dark:text-slate-400 block px-1">المدة</label>
+<select class="w-full bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 rounded-lg focus:ring-primary focus:border-primary">
+<option>الكل</option>
+<option>10 شهور</option>
+<option>12 شهر</option>
+<option>24 شهر</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-semibold text-slate-500 dark:text-slate-400 block px-1">تاريخ البداية</label>
+<input class="w-full bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 rounded-lg focus:ring-primary focus:border-primary text-sm" type="date"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-semibold text-slate-500 dark:text-slate-400 block px-1">تاريخ النهاية</label>
+<input class="w-full bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 rounded-lg focus:ring-primary focus:border-primary text-sm" type="date"/>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex-1 bg-primary hover:bg-blue-700 text-white font-semibold py-2 rounded-lg transition-all flex items-center justify-center gap-2">
+<span class="material-icons-outlined text-sm">filter_list</span>
+<span>تصفية</span>
+</button>
+<button class="p-2 border border-slate-200 dark:border-slate-700 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors text-slate-500">
+<span class="material-icons-outlined">refresh</span>
+</button>
+</div>
+</div>
+<div class="mt-6 pt-6 border-t border-slate-100 dark:border-slate-700">
+<div class="relative max-w-md">
+<span class="absolute inset-y-0 right-3 flex items-center text-slate-400">
+<span class="material-icons-outlined">search</span>
+</span>
+<input class="w-full pr-10 bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 rounded-xl focus:ring-primary focus:border-primary" placeholder="ابحث باسم الجمعية..." type="text"/>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-right border-collapse">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-900/50 text-slate-500 dark:text-slate-400 text-sm font-semibold border-b border-slate-200 dark:border-slate-700">
+<th class="px-6 py-4 w-16">م</th>
+<th class="px-6 py-4">اسم الجمعية</th>
+<th class="px-6 py-4">المدة</th>
+<th class="px-6 py-4">تاريخ البداية</th>
+<th class="px-6 py-4">تاريخ النهاية</th>
+<th class="px-6 py-4 text-center">عدد الأعضاء</th>
+<th class="px-6 py-4">المبلغ الإجمالي</th>
+<th class="px-6 py-4 text-center">التفاصيل</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-700">
+<tr class="hover:bg-slate-50/80 dark:hover:bg-slate-700/30 transition-colors">
+<td class="px-6 py-4 text-slate-400 font-mono">1</td>
+<td class="px-6 py-4 font-semibold text-slate-700 dark:text-slate-200">جمعية أصدقاء</td>
+<td class="px-6 py-4 text-slate-600 dark:text-slate-300">10 شهور</td>
+<td class="px-6 py-4 text-slate-600 dark:text-slate-300">2023/01/01</td>
+<td class="px-6 py-4 text-slate-600 dark:text-slate-300">2023/10/01</td>
+<td class="px-6 py-4 text-center">
+<span class="bg-blue-50 dark:bg-blue-900/20 text-primary dark:text-blue-400 px-3 py-1 rounded-full text-sm font-bold">12</span>
+</td>
+<td class="px-6 py-4 font-bold text-slate-700 dark:text-slate-200">20,000 ر.س</td>
+<td class="px-6 py-4 text-center">
+<button class="text-primary hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-semibold text-sm inline-flex items-center gap-1 group">
+<span class="material-icons-outlined text-lg group-hover:scale-110 transition-transform">visibility</span>
+<span>عرض</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50/80 dark:hover:bg-slate-700/30 transition-colors">
+<td class="px-6 py-4 text-slate-400 font-mono">2</td>
+<td class="px-6 py-4 font-semibold text-slate-700 dark:text-slate-200">جمعية يناير</td>
+<td class="px-6 py-4 text-slate-600 dark:text-slate-300">12 شهر</td>
+<td class="px-6 py-4 text-slate-600 dark:text-slate-300">2025/05/01</td>
+<td class="px-6 py-4 text-slate-600 dark:text-slate-300">2026/04/01</td>
+<td class="px-6 py-4 text-center">
+<span class="bg-blue-50 dark:bg-blue-900/20 text-primary dark:text-blue-400 px-3 py-1 rounded-full text-sm font-bold">10</span>
+</td>
+<td class="px-6 py-4 font-bold text-slate-700 dark:text-slate-200">30,000 ر.س</td>
+<td class="px-6 py-4 text-center">
+<button class="text-primary hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-semibold text-sm inline-flex items-center gap-1 group">
+<span class="material-icons-outlined text-lg group-hover:scale-110 transition-transform">visibility</span>
+<span>عرض</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50/80 dark:hover:bg-slate-700/30 transition-colors">
+<td class="px-6 py-4 text-slate-400 font-mono">3</td>
+<td class="px-6 py-4 font-semibold text-slate-700 dark:text-slate-200">جمعية العائلة</td>
+<td class="px-6 py-4 text-slate-600 dark:text-slate-300">24 شهر</td>
+<td class="px-6 py-4 text-slate-600 dark:text-slate-300">2024/01/01</td>
+<td class="px-6 py-4 text-slate-600 dark:text-slate-300">2025/12/31</td>
+<td class="px-6 py-4 text-center">
+<span class="bg-blue-50 dark:bg-blue-900/20 text-primary dark:text-blue-400 px-3 py-1 rounded-full text-sm font-bold">15</span>
+</td>
+<td class="px-6 py-4 font-bold text-slate-700 dark:text-slate-200">15,000 ر.س</td>
+<td class="px-6 py-4 text-center">
+<button class="text-primary hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-semibold text-sm inline-flex items-center gap-1 group">
+<span class="material-icons-outlined text-lg group-hover:scale-110 transition-transform">visibility</span>
+<span>عرض</span>
+</button>
+</td>
+</tr>
+</tbody>
+<tfoot class="bg-blue-50 dark:bg-blue-900/30 font-bold border-t-2 border-primary dark:border-blue-400">
+<tr>
+<td class="px-6 py-5 text-center text-primary dark:text-blue-400" colspan="5">
+<div class="flex justify-center items-center gap-2">
+<span class="material-icons-outlined">equalizer</span>
+<span>الإجمالي الكلي</span>
+</div>
+</td>
+<td class="px-6 py-5 text-center text-primary dark:text-blue-400 text-lg">37</td>
+<td class="px-6 py-5 text-primary dark:text-blue-400 text-lg" colspan="2">65,000 ر.س</td>
+</tr>
+</tfoot>
+</table>
+</div>
+<div class="px-6 py-4 bg-white dark:bg-slate-800 border-t border-slate-100 dark:border-slate-700 flex justify-between items-center">
+<p class="text-sm text-slate-500 dark:text-slate-400">عرض 1 إلى 3 من أصل 20 جمعية</p>
+<div class="flex gap-2">
+<button class="p-1 px-3 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-400 cursor-not-allowed">السابق</button>
+<button class="p-1 px-3 bg-primary text-white rounded-lg">1</button>
+<button class="p-1 px-3 border border-slate-200 dark:border-slate-700 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">2</button>
+<button class="p-1 px-3 border border-slate-200 dark:border-slate-700 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">3</button>
+<button class="p-1 px-3 border border-slate-200 dark:border-slate-700 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">التالي</button>
+</div>
+</div>
+</div>
+<footer class="mt-12 text-center text-slate-400 text-sm">
+<p>© 2024 نظام إدارة الجمعيات المتكامل. جميع الحقوق محفوظة.</p>
+</footer>
+</main>
+
+</body></html>

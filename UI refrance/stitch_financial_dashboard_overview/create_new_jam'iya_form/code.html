@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>إنشاء جمعية جديدة - Create New Jam'iya</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#2563eb",
+              "background-light": "#f8fafc",
+              "background-dark": "#0f172a",
+            },
+            fontFamily: {
+              display: ["IBM Plex Sans Arabic", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.75rem",
+            },
+          },
+        },
+      };
+    </script>
+<style>
+        body {
+            font-family: 'IBM Plex Sans Arabic', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen transition-colors duration-200">
+<div class="fixed top-6 left-6 z-50">
+<button class="p-3 rounded-full bg-white dark:bg-slate-800 shadow-lg text-slate-600 dark:text-slate-300 hover:scale-110 transition-transform" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-icons-round block dark:hidden">dark_mode</span>
+<span class="material-icons-round hidden dark:block">light_mode</span>
+</button>
+</div>
+<main class="max-w-4xl mx-auto px-4 py-12 md:py-20">
+<div class="text-center mb-10">
+<div class="inline-flex items-center justify-center p-3 bg-primary/10 rounded-2xl mb-4">
+<span class="material-icons-round text-primary text-4xl">account_balance_wallet</span>
+</div>
+<h1 class="text-3xl font-bold text-slate-900 dark:text-white">إنشاء جمعية جديدة</h1>
+<p class="text-slate-500 dark:text-slate-400 mt-2">قم بإدخال تفاصيل الجمعية الجديدة لإدارتها بسهولة</p>
+</div>
+<div class="bg-white dark:bg-slate-800 rounded-3xl shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-700 overflow-hidden">
+<div class="p-8 md:p-12">
+<form class="space-y-8" onsubmit="event.preventDefault();">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div>
+<label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2" for="jam-name">اسم الجمعية</label>
+<div class="relative">
+<span class="material-icons-round absolute right-4 top-1/2 -translate-y-1/2 text-slate-400">label</span>
+<input class="w-full pr-12 pl-4 py-3.5 bg-slate-50 dark:bg-slate-900 border-transparent focus:border-primary focus:ring-4 focus:ring-primary/10 rounded-2xl text-slate-900 dark:text-white transition-all" id="jam-name" placeholder="مثال: جمعية رمضان" type="text"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2" for="duration">مدة الجمعية (بالأشهر)</label>
+<div class="relative">
+<span class="material-icons-round absolute right-4 top-1/2 -translate-y-1/2 text-slate-400">calendar_today</span>
+<input class="w-full pr-12 pl-4 py-3.5 bg-slate-50 dark:bg-slate-900 border-transparent focus:border-primary focus:ring-4 focus:ring-primary/10 rounded-2xl text-slate-900 dark:text-white transition-all" id="duration" placeholder="10 أشهر" type="number"/>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div>
+<label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2" for="start-date">تاريخ البداية</label>
+<div class="relative">
+<span class="material-icons-round absolute right-4 top-1/2 -translate-y-1/2 text-slate-400">event_available</span>
+<input class="w-full pr-12 pl-4 py-3.5 bg-slate-50 dark:bg-slate-900 border-transparent focus:border-primary focus:ring-4 focus:ring-primary/10 rounded-2xl text-slate-900 dark:text-white transition-all text-right" id="start-date" type="date"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2" for="end-date">تاريخ النهاية</label>
+<div class="relative">
+<span class="material-icons-round absolute right-4 top-1/2 -translate-y-1/2 text-slate-400">event_busy</span>
+<input class="w-full pr-12 pl-4 py-3.5 bg-slate-100 dark:bg-slate-950 border-transparent rounded-2xl text-slate-500 dark:text-slate-400 cursor-not-allowed transition-all" id="end-date" placeholder="سيتم حسابه تلقائياً" readonly="" type="text"/>
+</div>
+</div>
+</div>
+<div class="flex gap-4 p-5 bg-blue-50/50 dark:bg-primary/5 rounded-2xl border border-primary/10">
+<span class="material-icons-round text-primary shrink-0">info</span>
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                            من الطبيعي أن تضع تاريخ البداية فقط، وتاريخ النهاية هو منتج يأتي بناءً على حساب مدة الجمعية وتاريخ البداية المحدد.
+                        </p>
+</div>
+<div class="pt-4 flex justify-end">
+<button class="group relative flex items-center justify-center gap-2 w-full md:w-auto px-12 py-4 bg-primary text-white font-bold rounded-2xl hover:bg-blue-700 hover:shadow-xl hover:shadow-primary/20 active:scale-95 transition-all" type="submit">
+<span class="material-icons-round">save</span>
+                            حفظ البيانات
+                        </button>
+</div>
+</form>
+</div>
+</div>
+<div class="mt-12 text-center text-slate-400 dark:text-slate-600 flex flex-col items-center gap-2">
+<div class="w-10 h-10 border-2 border-slate-200 dark:border-slate-800 rounded-lg flex items-center justify-center text-sm font-bold rotate-12">V</div>
+<p class="text-xs uppercase tracking-widest font-semibold">نظام إدارة الجمعيات الذكي</p>
+</div>
+</main>
+<script>
+        // Simple logic to demonstrate the "automatic calculation" mentioned in the sketch
+        const durationInput = document.getElementById('duration');
+        const startDateInput = document.getElementById('start-date');
+        const endDateInput = document.getElementById('end-date');
+        function calculateEndDate() {
+            const months = parseInt(durationInput.value);
+            const startDate = new Date(startDateInput.value);
+            if (months && !isNaN(startDate.getTime())) {
+                const endDate = new Date(startDate);
+                endDate.setMonth(startDate.getMonth() + months);
+                const options = { year: 'numeric', month: 'long' };
+                endDateInput.value = endDate.toLocaleDateString('ar-EG', options);
+            } else {
+                endDateInput.value = "";
+            }
+        }
+        durationInput.addEventListener('input', calculateEndDate);
+        startDateInput.addEventListener('change', calculateEndDate);
+    </script>
+
+</body></html>
